@@ -204,7 +204,6 @@
     <ClCompile Include="Engine\AssetsRenderer\AssetsRenderTextureManager.cpp" />
     <ClCompile Include="Engine\AssetsRenderer\AssetsTexturesSelector.cpp" />
     <ClCompile Include="Engine\EngineFunctionManager.cpp" />
-    <ClCompile Include="Engine\Pause\Pause.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugLayer\Inspector\ImGuiInspector.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugLayer\Inspector\ImGuiWrapper.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugLayer\Inspector\Inspector.cpp" />
@@ -215,8 +214,6 @@
     <ClCompile Include="Engine\DebugManager\DebugUtility\LineRenderer\LineRenderer2D.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugUtility\LineRenderer\LineRenderer3D.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugUtility\Debug.cpp" />
-    <ClCompile Include="Engine\DebugManager\DebugUtility\DebugUtility.cpp" />
-    <ClCompile Include="Engine\DebugManager\DebugUtility\Log.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugUtility\PointRenderer.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugManager.cpp" />
     <ClCompile Include="System\FpsCounter\FPSCounter.cpp" />
@@ -258,6 +255,8 @@
     <ClCompile Include="Collision\BoxHelper.cpp" />
     <ClCompile Include="Engine\ModelViewer\ColliderOptionGUI.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugUtility\LineRenderer\LineInstancingDrawer.cpp" />
+    <ClCompile Include="Engine\DebugManager\DebugUtility\DebugUtility.cpp" />
+    <ClCompile Include="Engine\DebugManager\DebugUtility\Log.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component\ComponentManager.h" />
@@ -502,8 +501,6 @@
     <ClInclude Include="Engine\AssetsRenderer\IAssetsRenderTexturesGetter.h" />
     <ClInclude Include="Engine\AssetsRenderer\ICurrentSelectTextureGetter.h" />
     <ClInclude Include="Engine\EngineFunctionManager.h" />
-    <ClInclude Include="Engine\Pause\Pause.h" />
-    <ClInclude Include="Engine\Pause\IPause.h" />
     <ClInclude Include="GameObject\IGameObjectsGetter.h" />
     <ClInclude Include="Engine\DebugManager\DebugLayer\Inspector\ImGuiInspector.h" />
     <ClInclude Include="Engine\DebugManager\DebugLayer\Inspector\ImGuiWrapper.h" />
@@ -515,8 +512,6 @@
     <ClInclude Include="Engine\DebugManager\DebugUtility\LineRenderer\LineRenderer2D.h" />
     <ClInclude Include="Engine\DebugManager\DebugUtility\LineRenderer\LineRenderer3D.h" />
     <ClInclude Include="Engine\DebugManager\DebugUtility\Debug.h" />
-    <ClInclude Include="Engine\DebugManager\DebugUtility\DebugUtility.h" />
-    <ClInclude Include="Engine\DebugManager\DebugUtility\Log.h" />
     <ClInclude Include="Engine\DebugManager\DebugUtility\PointRenderer.h" />
     <ClInclude Include="Engine\DebugManager\DebugManager.h" />
     <ClInclude Include="System\FpsCounter\FPSCounter.h" />
@@ -574,6 +569,8 @@
     <ClInclude Include="Engine\ModelViewer\ColliderOptionGUI.h" />
     <ClInclude Include="Engine\DebugManager\DebugUtility\LineRenderer\LineInstancingDrawer.h" />
     <ClInclude Include="Component\Engine\EngineComponentAlias.h" />
+    <ClInclude Include="Engine\DebugManager\DebugUtility\DebugUtility.h" />
+    <ClInclude Include="Engine\DebugManager\DebugUtility\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\MeshCommonHeader.hlsli" />

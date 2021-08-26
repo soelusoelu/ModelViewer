@@ -9,7 +9,6 @@
 
 DebugUtility::DebugUtility()
     : FileOperator("DebugUtility")
-    , mPause(nullptr)
     , mLog(std::make_unique<Log>())
     , mPointRenderer(std::make_unique<PointRenderer>())
     , mLineRenderer2D(std::make_unique<LineRenderer2D>())
@@ -26,8 +25,7 @@ DebugUtility& DebugUtility::instance() {
     return *mInstance;
 }
 
-void DebugUtility::initialize(const IPause* pause) {
-    mPause = pause;
+void DebugUtility::initialize() {
     mLog->initialize();
     mPointRenderer->initialize();
     mLineRenderer2D->initialize();
@@ -39,11 +37,6 @@ void DebugUtility::finalize() {
 }
 
 void DebugUtility::preUpdateProcess() {
-    //ポーズ中なら終了
-    if (mPause->isPausing()) {
-        return;
-    }
-
     //描画情報を削除
     mPointRenderer->clear();
     mLineRenderer2D->clear();

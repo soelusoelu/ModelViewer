@@ -14,7 +14,6 @@
 #include "../Engine/DebugManager/DebugLayer/DebugLayer.h"
 #include "../Engine/DebugManager/DebugLayer/Hierarchy.h"
 #include "../Engine/DebugManager/DebugLayer/Inspector/ImGuiInspector.h"
-#include "../Engine/Pause/Pause.h"
 #include "../GameObject/GameObject.h"
 #include "../GameObject/GameObjectFactory.h"
 #include "../GameObject/GameObjectManager.h"
@@ -70,11 +69,6 @@ void SceneManager::update() {
     mEngineManager->preUpdateProcess();
     //デバッグ
     mEngineManager->update();
-
-    //ポーズ中はデバッグだけアップデートを行う
-    if (mEngineManager->pause().isPausing()) {
-        return;
-    }
 
     //スプライトはいつでも更新する
     mSpriteManager->update();

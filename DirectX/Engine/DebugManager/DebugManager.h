@@ -1,6 +1,5 @@
 ﻿#pragma once
 
-#include "../Pause/IPause.h"
 #include "../../Device/FileOperator.h"
 #include "../../GameObject/IGameObjectsGetter.h"
 #include "../../Math/Math.h"
@@ -23,8 +22,7 @@ public:
     //初期化
     void initialize(
         const IGameObjectsGetter* gameObjectsGetter,
-        const IFpsGetter* fpsGetter,
-        const IPause* pause
+        const IFpsGetter* fpsGetter
     );
 
     //アップデート前処理

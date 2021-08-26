@@ -12,7 +12,6 @@
 class Camera;
 class DirectionalLight;
 class Renderer;
-class Pause;
 class ModelViewer;
 
 //エンジン機能統括クラス
@@ -25,7 +24,6 @@ public:
     ~EngineFunctionManager();
 
     virtual DebugManager& debug() const override;
-    virtual IPause& pause() const override;
     virtual AssetsRenderTextureManager& getAssetsRenderTextureManager() const override;
 
     //初期化
@@ -59,7 +57,6 @@ private:
 
 private:
     std::unique_ptr<DebugManager> mDebugManager;
-    std::unique_ptr<Pause> mPause;
     std::unique_ptr<AssetsRenderTextureManager> mAssetsRenderTextureManager;
     std::unique_ptr<ModelViewer> mModelViewer;
 };

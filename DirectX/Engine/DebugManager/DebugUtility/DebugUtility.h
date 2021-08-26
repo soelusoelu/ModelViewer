@@ -1,6 +1,5 @@
 ﻿#pragma once
 
-#include "../../Pause/IPause.h"
 #include "../../../Device/FileOperator.h"
 #include "../../../Math/Math.h"
 #include <memory>
@@ -21,7 +20,7 @@ private:
 public:
     ~DebugUtility();
     static DebugUtility& instance();
-    void initialize(const IPause* pause);
+    void initialize();
     void finalize();
     void preUpdateProcess();
     void draw(DrawString& drawer) const;
@@ -41,7 +40,6 @@ private:
 private:
     static inline DebugUtility* mInstance = nullptr;
 
-    const IPause* mPause;
     std::unique_ptr<Log> mLog;
     std::unique_ptr<PointRenderer> mPointRenderer;
     std::unique_ptr<LineRenderer2D> mLineRenderer2D;

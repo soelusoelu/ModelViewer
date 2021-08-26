@@ -16,12 +16,11 @@ DebugManager::~DebugManager() {
 
 void DebugManager::initialize(
     const IGameObjectsGetter* gameObjectsGetter,
-    const IFpsGetter* fpsGetter,
-    const IPause* pause
+    const IFpsGetter* fpsGetter
 ) {
     mStringDrawer->initialize();
     mDebugLayer->initialize(gameObjectsGetter, fpsGetter);
-    DebugUtility::instance().initialize(pause);
+    DebugUtility::instance().initialize();
 }
 
 void DebugManager::preUpdateProcess() {
