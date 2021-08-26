@@ -12,7 +12,6 @@
 #include "../Engine/EngineFunctionManager.h"
 #include "../Engine/DebugManager/DebugManager.h"
 #include "../Engine/DebugManager/DebugLayer/DebugLayer.h"
-#include "../Engine/DebugManager/DebugLayer/Hierarchy.h"
 #include "../Engine/DebugManager/DebugLayer/Inspector/ImGuiInspector.h"
 #include "../GameObject/GameObject.h"
 #include "../GameObject/GameObjectFactory.h"

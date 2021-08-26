@@ -208,8 +208,6 @@
     <ClCompile Include="Engine\DebugManager\DebugLayer\Inspector\ImGuiWrapper.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugLayer\Inspector\Inspector.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugLayer\DebugLayer.cpp" />
-    <ClCompile Include="Engine\DebugManager\DebugLayer\FixedDebugInformation.cpp" />
-    <ClCompile Include="Engine\DebugManager\DebugLayer\Hierarchy.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugUtility\LineRenderer\LineRenderer.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugUtility\LineRenderer\LineRenderer2D.cpp" />
     <ClCompile Include="Engine\DebugManager\DebugUtility\LineRenderer\LineRenderer3D.cpp" />
@@ -506,8 +504,6 @@
     <ClInclude Include="Engine\DebugManager\DebugLayer\Inspector\ImGuiWrapper.h" />
     <ClInclude Include="Engine\DebugManager\DebugLayer\Inspector\Inspector.h" />
     <ClInclude Include="Engine\DebugManager\DebugLayer\DebugLayer.h" />
-    <ClInclude Include="Engine\DebugManager\DebugLayer\FixedDebugInformation.h" />
-    <ClInclude Include="Engine\DebugManager\DebugLayer\Hierarchy.h" />
     <ClInclude Include="Engine\DebugManager\DebugUtility\LineRenderer\LineRenderer.h" />
     <ClInclude Include="Engine\DebugManager\DebugUtility\LineRenderer\LineRenderer2D.h" />
     <ClInclude Include="Engine\DebugManager\DebugUtility\LineRenderer\LineRenderer3D.h" />

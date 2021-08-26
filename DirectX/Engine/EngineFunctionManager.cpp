@@ -45,7 +45,6 @@ void EngineFunctionManager::preUpdateProcess() {
 void EngineFunctionManager::update() {
     mAssetsRenderTextureManager->update();
     mModelViewer->update();
-    mDebugManager->update();
 }
 
 void EngineFunctionManager::draw2D(const Renderer& renderer, Matrix4& proj) const {

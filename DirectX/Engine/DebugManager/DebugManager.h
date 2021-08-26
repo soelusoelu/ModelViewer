@@ -27,8 +27,6 @@ public:
 
     //アップデート前処理
     void preUpdateProcess();
-    //毎フレーム更新
-    void update();
 
     //2D関連の描画
     void draw2D(const Renderer& renderer, Matrix4& proj) const;

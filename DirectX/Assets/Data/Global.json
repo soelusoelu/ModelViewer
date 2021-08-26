@@ -24,22 +24,6 @@
         "EngineFunctionManager": {},
         "DebugManager": {},
         "DebugLayer": {},
-        "FixedDebugInformation": {
-            "scale": [
-                0.3125,
-                0.3125
-            ]
-        },
-        "Hierarchy": {
-            "scale": [
-                0.30000001192092898,
-                0.30000001192092898
-            ],
-            "offsetCharCountX": 2,
-            "offsetCharCountY": 3,
-            "lineSpace": 8.0,
-            "nonActiveAlpha": 0.30000001192092898
-        },
         "ImGuiInspector": {
             "inspectorPositionX": 1400.0
         },

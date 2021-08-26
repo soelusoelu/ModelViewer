@@ -19,7 +19,6 @@ void DebugManager::initialize(
     const IFpsGetter* fpsGetter
 ) {
     mStringDrawer->initialize();
-    mDebugLayer->initialize(gameObjectsGetter, fpsGetter);
     DebugUtility::instance().initialize();
 }
 
@@ -27,10 +26,6 @@ void DebugManager::preUpdateProcess() {
     //描画済み文字列を削除する
     mStringDrawer->clear();
     DebugUtility::instance().preUpdateProcess();
-}
-
-void DebugManager::update() {
-    mDebugLayer->update();
 }
 
 void DebugManager::draw2D(const Renderer& renderer, Matrix4& proj) const {
