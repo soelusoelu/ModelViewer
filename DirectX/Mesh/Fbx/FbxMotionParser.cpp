@@ -19,7 +19,7 @@ void FbxMotionParser::parse(
     const std::vector<FbxMesh*>& fbxMeshes
 ) {
     //ボーンの読み込み
-    mBoneParser->parse(meshesVertices, bones, fbxMeshes);
+   mBoneParser->parse(meshesVertices, bones, fbxMeshes);
 
     //アニメーション数を取得する
     auto numAnim = fbxScene->GetSrcObjectCount<FbxAnimStack>();

@@ -33,7 +33,7 @@ void ModelViewerColliderManager::update(LineInstancingDrawer& line, const Simple
     drawBone(line);
     selectObb(camera);
 
-    if (Input::mouse().getMouseButtonDown(MouseCode::WheelButton) && mSelectedObbNo != INVALID_NO) {
+    if (Input::keyboard().getKeyDown(KeyCode::P) && mSelectedObbNo != INVALID_NO) {
         mOptionGui->open(mObbColliders[mSelectedObbNo]);
     }
 

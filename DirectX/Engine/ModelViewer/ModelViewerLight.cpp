@@ -1,6 +1,5 @@
 ﻿#include "ModelViewerLight.h"
 #include "../../Engine/DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
-#include "../../Engine/DebugManager/DebugUtility/Debug.h"
 #include "../../System/Window.h"
 #include "../../Utility/JsonHelper.h"
 
@@ -23,8 +22,6 @@ void ModelViewerLight::drawGUI() {
         mDirection.setEuler(euler);
     }
     ImGuiWrapper::colorEdit3("Color", mColor);
-
-    Debug::renderLine(mDirectionDrawPosition, mDirectionDrawPosition + getDirection() * mLengthDirection, ColorPalette::red);
 }
 
 Vector3 ModelViewerLight::getDirection() const {
