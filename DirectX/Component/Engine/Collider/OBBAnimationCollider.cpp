@@ -1,8 +1,8 @@
 ﻿#include "OBBAnimationCollider.h"
 #include "../Mesh/AnimationCPU.h"
 #include "../Mesh/MeshComponent.h"
-#include "../../../Engine/DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
 #include "../../../Engine/DebugManager/DebugUtility/Debug.h"
+#include "../../../Engine/DebugManager/Inspector/ImGuiWrapper.h"
 #include "../../../Transform/Transform3D.h"
 #include <cassert>
 

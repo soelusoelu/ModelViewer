@@ -1,13 +1,13 @@
 ﻿#include "Inspector.h"
-#include "../../DebugUtility/Debug.h"
-#include "../../../../Component/Component.h"
-#include "../../../../Component/ComponentManager.h"
-#include "../../../../Device/DrawString.h"
-#include "../../../../GameObject/GameObject.h"
-#include "../../../../System/Window.h"
-#include "../../../../Transform/Transform3D.h"
-#include "../../../../Utility/JsonHelper.h"
-#include "../../../../Utility/StringUtil.h"
+#include "../DebugUtility/Debug.h"
+#include "../../../Component/Component.h"
+#include "../../../Component/ComponentManager.h"
+#include "../../../Device/DrawString.h"
+#include "../../../GameObject/GameObject.h"
+#include "../../../System/Window.h"
+#include "../../../Transform/Transform3D.h"
+#include "../../../Utility/JsonHelper.h"
+#include "../../../Utility/StringUtil.h"
 #include <list>
 
 Inspector::Inspector(DrawString* drawString)

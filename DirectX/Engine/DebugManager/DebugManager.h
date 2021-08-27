@@ -1,16 +1,13 @@
 ﻿#pragma once
 
 #include "../../Device/FileOperator.h"
-#include "../../GameObject/IGameObjectsGetter.h"
 #include "../../Math/Math.h"
-#include "../../System/FpsCounter/IFpsGetter.h"
 #include <memory>
 
 class Camera;
 class DirectionalLight;
 class Renderer;
 class DrawString;
-class DebugLayer;
 
 class DebugManager
     : public FileOperator
@@ -20,11 +17,7 @@ public:
     ~DebugManager();
 
     //初期化
-    void initialize(
-        const IGameObjectsGetter* gameObjectsGetter,
-        const IFpsGetter* fpsGetter
-    );
-
+    void initialize();
     //アップデート前処理
     void preUpdateProcess();
 
@@ -39,9 +32,6 @@ public:
         const Matrix4& viewProj
     ) const;
 
-    //デバッグレイヤーを取得する
-    DebugLayer& getDebugLayer() const;
-
 private:
     DebugManager(const DebugManager&) = delete;
     DebugManager& operator=(const DebugManager&) = delete;
@@ -50,5 +40,4 @@ private:
 
 private:
     std::unique_ptr<DrawString> mStringDrawer;
-    std::unique_ptr<DebugLayer> mDebugLayer;
 };

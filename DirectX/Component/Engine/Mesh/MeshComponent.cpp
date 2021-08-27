@@ -111,6 +111,10 @@ const IMeshDrawer* MeshComponent::getDrawer() const {
     return (mMesh) ? mMesh.get() : nullptr;
 }
 
+std::string MeshComponent::getFilePath() const {
+    return mDirectoryPath + mFileName;
+}
+
 bool MeshComponent::handleShadow() const {
     return mShadowHandle;
 }

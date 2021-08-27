@@ -1,5 +1,5 @@
 #include "ColliderOptionGUI.h"
-#include "../DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
+#include "../DebugManager/Inspector/ImGuiWrapper.h"
 #include "../../Component/Engine/Collider/OBBCollider.h"
 #include "../../Input/Input.h"
 #include <algorithm>

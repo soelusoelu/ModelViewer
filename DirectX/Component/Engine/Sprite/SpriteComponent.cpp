@@ -1,5 +1,5 @@
 ﻿#include "SpriteComponent.h"
-#include "../../../Engine/DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
+#include "../../../Engine/DebugManager/Inspector/ImGuiWrapper.h"
 #include "../../../GameObject/GameObject.h"
 #include "../../../Imgui/imgui.h"
 #include "../../../Sprite/Sprite.h"

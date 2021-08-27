@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include "IInspector.h"
-#include "../../../../Device/FileOperator.h"
+#include "../../../Device/FileOperator.h"
 #include <memory>
 
 class GameObject;

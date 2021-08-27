@@ -43,6 +43,9 @@ public:
     //描画インターフェースを取得する
     const IMeshDrawer* getDrawer() const;
 
+    //モデルのファイルパスを取得する
+    std::string getFilePath() const;
+
     //影の処理をするか
     bool handleShadow() const;
 

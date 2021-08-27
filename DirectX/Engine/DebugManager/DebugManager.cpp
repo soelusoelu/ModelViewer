@@ -1,12 +1,10 @@
 ﻿#include "DebugManager.h"
-#include "DebugLayer/DebugLayer.h"
 #include "DebugUtility/DebugUtility.h"
 #include "../../Device/DrawString.h"
 
 DebugManager::DebugManager()
     : FileOperator("DebugManager")
     , mStringDrawer(std::make_unique<DrawString>())
-    , mDebugLayer(std::make_unique<DebugLayer>())
 {
 }
 
@@ -14,10 +12,7 @@ DebugManager::~DebugManager() {
     DebugUtility::instance().finalize();
 }
 
-void DebugManager::initialize(
-    const IGameObjectsGetter* gameObjectsGetter,
-    const IFpsGetter* fpsGetter
-) {
+void DebugManager::initialize() {
     mStringDrawer->initialize();
     DebugUtility::instance().initialize();
 }
@@ -33,7 +28,6 @@ void DebugManager::draw2D(const Renderer& renderer, Matrix4& proj) const {
 }
 
 void DebugManager::drawDebug2D(Matrix4& proj) const {
-    mDebugLayer->draw();
     DebugUtility::instance().draw(*mStringDrawer);
     mStringDrawer->drawAll(proj);
 }
@@ -45,14 +39,9 @@ void DebugManager::draw3D(
     DebugUtility::instance().draw3D(renderer, viewProj);
 }
 
-DebugLayer& DebugManager::getDebugLayer() const {
-    return *mDebugLayer;
-}
-
 void DebugManager::childSaveAndLoad(rapidjson::Value& inObj, rapidjson::Document::AllocatorType& alloc, FileMode mode) {
     if (mode == FileMode::LOAD) {
         mStringDrawer->writeAndRead(inObj, alloc, mode);
     }
-    mDebugLayer->writeAndRead(inObj, alloc, mode);
     DebugUtility::instance().writeAndRead(inObj, alloc, mode);
 }

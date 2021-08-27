@@ -8,9 +8,8 @@
 #include "../AssetsRenderer/AssetsRenderTexture.h"
 #include "../Camera/SimpleCamera.h"
 #include "../DebugManager/DebugManager.h"
-#include "../DebugManager/DebugLayer/DebugLayer.h"
-#include "../DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
 #include "../DebugManager/DebugUtility/LineRenderer/LineInstancingDrawer.h"
+#include "../DebugManager/Inspector/ImGuiWrapper.h"
 #include "../../Component/Engine/Mesh/MeshComponent.h"
 #include "../../Component/Engine/Mesh/MeshRenderer.h"
 #include "../../Device/Renderer.h"
@@ -34,7 +33,6 @@ ModelViewer::ModelViewer()
     , mColliderManager(std::make_unique<ModelViewerColliderManager>())
     , mMode(ModelViewerMode::MODEL_VIEW)
     , mIsUpdate(true)
-    , mGuiSizeX(0.f)
 {
 }
 
@@ -72,9 +70,6 @@ void ModelViewer::initialize(
 
     callbackSelectAssetsTexture->callbackSelectTexture([&] { onSelectAssetsTexture(); });
     mMeshManager->registerThisToMeshRenderer();
-
-    auto inspectorPosX = engineManagingClassGetter->debug().getDebugLayer().inspector()->getInspectorPositionX();
-    mGuiSizeX = inspectorPosX - Window::width();
 }
 
 void ModelViewer::update() {
@@ -161,7 +156,7 @@ void ModelViewer::drawGUI() const {
     //ウィンドウ位置を固定
     ImGui::SetNextWindowPos(ImVec2(Window::width(), 0.f), ImGuiCond_Always);
     //ウィンドウサイズを固定
-    ImGui::SetNextWindowSize(ImVec2(mGuiSizeX, Window::debugHeight()), ImGuiCond_Always);
+    ImGui::SetNextWindowSize(ImVec2(Window::standardWidth() - Window::width(), Window::debugHeight()), ImGuiCond_Always);
 
     ImGui::Begin("ModelViewer");
 

@@ -95,6 +95,4 @@ private:
     ModelViewerMode mMode;
     //キャラクターをアップデートするか
     bool mIsUpdate;
-    //調整用GUIの横サイズ
-    float mGuiSizeX;
 };

@@ -4,7 +4,7 @@
 #include "../Mesh/SkinMeshComponent.h"
 #include "../../../Device/Physics.h"
 #include "../../../Engine/DebugManager/DebugUtility/DebugUtility.h"
-#include "../../../Engine/DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
+#include "../../../Engine/DebugManager/Inspector/ImGuiWrapper.h"
 #include "../../../Transform/Transform3D.h"
 #include "../../../Utility/JsonHelper.h"
 #include <cassert>
@@ -53,7 +53,7 @@ void OBBCollider::lateUpdate() {
     beforeComputeWorldMatrix();
 
     //当たり判定表示
-    ColliderDrawer::drawOBB(DebugUtility::instance().lineRenderer3D(), mOBB);
+    //ColliderDrawer::drawOBB(DebugUtility::instance().lineRenderer3D(), mOBB);
 }
 
 void OBBCollider::finalize() {

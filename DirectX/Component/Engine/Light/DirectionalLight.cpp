@@ -1,5 +1,5 @@
 ﻿#include "DirectionalLight.h"
-#include "../../../Engine/DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
+#include "../../../Engine/DebugManager/Inspector/ImGuiWrapper.h"
 #include "../../../Imgui/imgui.h"
 #include "../../../Transform/Transform3D.h"
 #include "../../../Utility/JsonHelper.h"

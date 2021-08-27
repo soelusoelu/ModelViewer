@@ -1,7 +1,7 @@
 ﻿#pragma once
 
-#include "../../../../Math/Math.h"
-#include "../../../../Device/FileOperator.h"
+#include "../../../Math/Math.h"
+#include "../../../Device/FileOperator.h"
 #include <any>
 #include <memory>
 #include <string>

@@ -1,10 +1,8 @@
 ﻿#include "EngineFunctionManager.h"
 #include "AssetsRenderer/AssetsRenderTextureManager.h"
 #include "DebugManager/DebugManager.h"
-#include "DebugManager/DebugLayer/DebugLayer.h"
 #include "ModelViewer/ModelViewer.h"
 #include "../Component/Engine/Camera/Camera.h"
-#include "../Component/Engine/Light/DirectionalLight.h"
 #include "../Device/Renderer.h"
 
 EngineFunctionManager::EngineFunctionManager()
@@ -25,11 +23,8 @@ AssetsRenderTextureManager& EngineFunctionManager::getAssetsRenderTextureManager
     return *mAssetsRenderTextureManager;
 }
 
-void EngineFunctionManager::initialize(
-    const IGameObjectsGetter* gameObjctsGetter,
-    const IFpsGetter* fpsGetter
-) {
-    mDebugManager->initialize(gameObjctsGetter, fpsGetter);
+void EngineFunctionManager::initialize() {
+    mDebugManager->initialize();
     mAssetsRenderTextureManager->initialize();
     mModelViewer->initialize(
         mAssetsRenderTextureManager.get(),
@@ -56,14 +51,9 @@ void EngineFunctionManager::drawDebug2D(Matrix4& proj) const {
     mDebugManager->drawDebug2D(proj);
 }
 
-void EngineFunctionManager::draw3D(
-    const Renderer& renderer,
-    const Camera& camera,
-    const DirectionalLight& dirLight
-) const {
+void EngineFunctionManager::draw3D(const Renderer& renderer) const {
     mAssetsRenderTextureManager->drawMeshes();
     mModelViewer->draw(renderer);
-    mDebugManager->draw3D(renderer, camera.getViewProjection());
 }
 
 void EngineFunctionManager::childSaveAndLoad(rapidjson::Value& inObj, rapidjson::Document::AllocatorType& alloc, FileMode mode) {

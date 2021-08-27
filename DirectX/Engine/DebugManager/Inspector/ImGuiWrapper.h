@@ -1,7 +1,7 @@
 ﻿#pragma once
 
-#include "../../../../Imgui/imgui.h"
-#include "../../../../Math/Math.h"
+#include "../../../Imgui/imgui.h"
+#include "../../../Math/Math.h"
 #include <string>
 
 //ImGuiラッパー関数群

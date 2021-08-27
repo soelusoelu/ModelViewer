@@ -1,5 +1,9 @@
 ﻿#include "AssetsRenderTextureAdder.h"
+#include "../../Component/ComponentManager.h"
+#include "../../Component/Engine/Mesh/MeshComponent.h"
 #include "../../Device/Button.h"
+#include "../../GameObject/GameObject.h"
+#include "../../GameObject/GameObjectFactory.h"
 #include "../../Input/Input.h"
 #include "../../Math/Math.h"
 #include "../../Utility/FileUtil.h"
@@ -32,7 +36,22 @@ void AssetsRenderTextureAdder::saveAndLoad(rapidjson::Value& inObj, rapidjson::D
 void AssetsRenderTextureAdder::onClickButton() {
     if (std::string outFilePath, outFileName; FileUtil::openFileDialog(outFilePath, outFileName)) {
         //絶対パスからアセットディレクトリ部分を抜き出す
-        const auto& assetsDir = FileUtil::getAssetsFromAbsolutePath(outFilePath);
+        auto assetsDir = FileUtil::getAssetsFromAbsolutePath(outFilePath);
+
+        std::string JSON = ".json";
+        if (FileUtil::getFileExtension(assetsDir) == JSON) {
+            auto filePath = assetsDir.substr(0, assetsDir.length() - JSON.length());
+            auto filename = FileUtil::getFileNameFromDirectry(filePath);
+            auto directoryPath = FileUtil::getDirectryFromFilePath(filePath);
+            auto gameObj = GameObjectCreater::create(filename, directoryPath);
+            auto mesh = gameObj->componentManager().getComponent<MeshComponent>();
+            if (!mesh) {
+                return;
+            }
+
+            assetsDir = mesh->getFilePath();
+        }
+
         mAssetsAdder->add(assetsDir);
     }
 }

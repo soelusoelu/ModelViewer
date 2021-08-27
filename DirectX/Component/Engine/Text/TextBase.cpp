@@ -1,5 +1,5 @@
 ﻿#include "TextBase.h"
-#include "../../../Engine/DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
+#include "../../../Engine/DebugManager/Inspector/ImGuiWrapper.h"
 #include "../../../System/Window.h"
 #include "../../../Utility/JsonHelper.h"
 

@@ -1,5 +1,5 @@
 ﻿#include "ModelViewerPlane.h"
-#include "../DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
+#include "../DebugManager/Inspector/ImGuiWrapper.h"
 #include "../../Component/Engine/Mesh/MeshComponent.h"
 #include "../../Component/Engine/Mesh/MeshRenderer.h"
 #include "../../GameObject/GameObject.h"

@@ -1,6 +1,6 @@
 ﻿#include "TextNumber.h"
 #include "../../../Device/DrawString.h"
-#include "../../../Engine/DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
+#include "../../../Engine/DebugManager/Inspector/ImGuiWrapper.h"
 #include "../../../Utility/JsonHelper.h"
 
 TextNumber::TextNumber()

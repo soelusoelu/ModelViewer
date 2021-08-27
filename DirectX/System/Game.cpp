@@ -97,7 +97,7 @@ void Game::initialize() {
     Random::initialize();
     InputManager::initialize(hwnd);
     GameObjectCreater::initialize();
-    mSceneManager->initialize(mFPSCounter.get());
+    mSceneManager->initialize();
 }
 
 void Game::mainLoop() {

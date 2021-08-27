@@ -2,8 +2,8 @@
     "globalProperties": {
         "Window": {
             "title": "ModelViewer",
-            "windowWidth": 1024,
-            "windowHeight": 576,
+            "windowWidth": 1280,
+            "windowHeight": 720,
             "releaseWindowWidth": 1920,
             "releaseWindowHeight": 1080,
             "windowStandardWidth": 1920,
@@ -23,10 +23,6 @@
         "SceneManager": {},
         "EngineFunctionManager": {},
         "DebugManager": {},
-        "DebugLayer": {},
-        "ImGuiInspector": {
-            "inspectorPositionX": 1400.0
-        },
         "DebugUtility": {},
         "Log": {
             "scale": [
@@ -37,9 +33,7 @@
         "AssetsRenderTextureList": {
             "textureSize": 64,
             "textureDisplayInterval": 32,
-            "texturesFilePath": [
-                "Assets\\Model\\Shape\\cone.fbx"
-            ]
+            "texturesFilePath": []
         },
         "AssetsRenderTextureAdder": {
             "renderPosition": [
@@ -50,10 +44,10 @@
         },
         "ModelViewerLight": {
             "direction": [
-                0.923882246017456,
-                -8.239712769864127e-7,
-                -3.078376664689131e-7,
-                -0.38267695903778078
+                -0.9268631339073181,
+                5.018115416532964e-7,
+                -5.018115416532964e-7,
+                0.3753993809223175
             ],
             "color": [
                 1.0,
@@ -72,16 +66,6 @@
             "lightDistance": 290.0,
             "nearClip": 10.0,
             "farClip": 300.0
-        },
-        "LightManager": {
-            "ambientLight": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "PointLight": {
-            "pointLightMeshFileName": "Shape/Sphere.obj"
         },
         "DrawString": {
             "number": "System/number2.png",

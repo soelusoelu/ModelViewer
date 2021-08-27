@@ -2,15 +2,11 @@
 
 #include "IEngineManagingClassGetter.h"
 #include "../Device/FileOperator.h"
-#include "../GameObject/IGameObjectsGetter.h"
 #include "../Math/Math.h"
-#include "../Mesh/IMeshesGetter.h"
-#include "../System/FpsCounter/IFpsGetter.h"
 #include <memory>
 #include <string>
 
 class Camera;
-class DirectionalLight;
 class Renderer;
 class ModelViewer;
 
@@ -27,10 +23,7 @@ public:
     virtual AssetsRenderTextureManager& getAssetsRenderTextureManager() const override;
 
     //初期化
-    void initialize(
-        const IGameObjectsGetter* gameObjctsGetter,
-        const IFpsGetter* fpsGetter
-    );
+    void initialize();
 
     //アップデート前処理
     void preUpdateProcess();
@@ -43,11 +36,7 @@ public:
     void drawDebug2D(Matrix4& proj) const;
 
     //3D関連の描画
-    void draw3D(
-        const Renderer& renderer,
-        const Camera& camera,
-        const DirectionalLight& dirLight
-    ) const;
+    void draw3D(const Renderer& renderer) const;
 
 private:
     EngineFunctionManager(const EngineFunctionManager&) = delete;
