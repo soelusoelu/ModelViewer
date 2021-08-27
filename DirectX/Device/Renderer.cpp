@@ -119,7 +119,7 @@ void Renderer::renderToDebug(Matrix4& proj) const {
     auto& dx = MyDirectX::DirectX::instance();
 
     dx.setDebugRenderTarget();
-    dx.setViewport(Window::debugWidth(), Window::debugHeight());
+    dx.setViewport(Window::standardWidth(), Window::standardHeight());
 
     //原点をスクリーン左上にするために平行移動
     proj.m[3][0] = -1.f;

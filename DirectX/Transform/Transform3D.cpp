@@ -1,6 +1,6 @@
 ﻿#include "Transform3D.h"
 #include "ParentChildRelationship.h"
-#include "../Engine/DebugManager/DebugLayer/Inspector/ImGuiWrapper.h"
+#include "../Engine/DebugManager/Inspector/ImGuiWrapper.h"
 #include "../GameObject/GameObject.h"
 #include "../Imgui/imgui.h"
 #include "../Utility/JsonHelper.h"

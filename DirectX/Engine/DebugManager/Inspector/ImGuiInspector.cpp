@@ -41,7 +41,7 @@ void ImGuiInspector::drawInspect() const {
     //ウィンドウ位置を固定
     ImGui::SetNextWindowPos(ImVec2(mInspectorPositionX, 0.f), ImGuiCond_Always);
     //ウィンドウサイズを固定
-    ImGui::SetNextWindowSize(ImVec2(Window::debugWidth() - mInspectorPositionX, Window::debugHeight()), ImGuiCond_Always);
+    ImGui::SetNextWindowSize(ImVec2(Window::standardWidth() - mInspectorPositionX, Window::standardHeight()), ImGuiCond_Always);
     //ウィンドウカラーを設定
     ImGui::PushStyleColor(ImGuiCol_TitleBg, ImVec4(0.f, 0.f, 1.f, 1.f));
     ImGui::PushStyleColor(ImGuiCol_TitleBgActive, ImVec4(0.f, 0.f, 1.f, 1.f));

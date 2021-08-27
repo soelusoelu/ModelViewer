@@ -218,13 +218,8 @@ void DirectX::createSwapChain(const HWND& hWnd) {
     DXGI_SWAP_CHAIN_DESC swapChainDesc;
     ZeroMemory(&swapChainDesc, sizeof(swapChainDesc));
     swapChainDesc.BufferCount = 1;
-#ifdef _DEBUG
-    swapChainDesc.BufferDesc.Width = Window::debugWidth();
-    swapChainDesc.BufferDesc.Height = Window::debugHeight();
-#else
-    swapChainDesc.BufferDesc.Width = Window::width();
-    swapChainDesc.BufferDesc.Height = Window::height();
-#endif // _DEBUG
+    swapChainDesc.BufferDesc.Width = Window::standardWidth();
+    swapChainDesc.BufferDesc.Height = Window::standardHeight();
     swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
     swapChainDesc.BufferDesc.RefreshRate.Numerator = 0;
     swapChainDesc.BufferDesc.RefreshRate.Denominator = 1;
@@ -254,13 +249,8 @@ void DirectX::createRenderTargetView() {
 
 void DirectX::createDepthStencilView() {
     Texture2DDesc desc{};
-#ifdef _DEBUG
-    desc.width = Window::debugWidth();
-    desc.height = Window::debugHeight();
-#else
-    desc.width = Window::width();
-    desc.height = Window::height();
-#endif // _DEBUG
+    desc.width = Window::standardWidth();
+    desc.height = Window::standardHeight();
     desc.format = Format::FORMAT_D24_UNORM_S8_UINT;
     desc.bindFlags = static_cast<unsigned>(Texture2DBind::TEXTURE_BIND_DEPTH_STENCIL);
 

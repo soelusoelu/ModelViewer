@@ -85,7 +85,7 @@ void Inspector::saveAndLoad(rapidjson::Value& inObj, rapidjson::Document::Alloca
 
 void Inspector::drawName(const GameObject& target) const {
     auto name = target.name();
-    auto pos = Vector2(mInspectorPositionX + (Window::debugWidth() - mInspectorPositionX) / 2.f, 0.f);
+    auto pos = Vector2(mInspectorPositionX + (Window::standardWidth() - mInspectorPositionX) / 2.f, 0.f);
     pos.x -= DrawString::WIDTH * mNameScale.x * name.length() / 2.f;
     mDrawString->drawString(name, pos, mNameScale);
 }

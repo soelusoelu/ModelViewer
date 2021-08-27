@@ -49,12 +49,7 @@ void Window::createWindow(HINSTANCE hInstance) {
     RegisterClassEx(&mWndClass);
 
     //ウィンドウサイズ { X 座標 Y 座標 横幅 縦幅 }
-    RECT wrc{};
-#ifdef _DEBUG
-    wrc = { 0, 0, mDebugWidth, mDebugHeight };
-#else
-    wrc = { 0, 0, mGameWidth, mGameHeight };
-#endif // _DEBUG
+    RECT wrc{ 0, 0, mStandardWidth, mStandardHeight };
     AdjustWindowRect(&wrc, WS_OVERLAPPEDWINDOW, false); //自動でサイズ補正
 
     //ウィンドウの作成
@@ -73,19 +68,7 @@ void Window::createWindow(HINSTANCE hInstance) {
     );
 
     //ウインドウの表示
-#ifdef _DEBUG
-    //デバッグ時は最大表示
     ShowWindow(mhWnd, SW_MAXIMIZE);
-#else
-    //リリース時は1920 * 1080の場合最大表示
-    //それ以外の場合ウィンドウサイズで表示
-    if (mGameWidth == mStandardWidth && mGameHeight == mStandardHeight) {
-        ShowWindow(mhWnd, SW_MAXIMIZE);
-    } else {
-        ShowWindow(mhWnd, SW_SHOW);
-    }
-#endif // _DEBUG
-
     UpdateWindow(mhWnd);
 }
 
@@ -135,14 +118,6 @@ int Window::standardHeight() {
     return mStandardHeight;
 }
 
-int Window::debugWidth() {
-    return mDebugWidth;
-}
-
-int Window::debugHeight() {
-    return mDebugHeight;
-}
-
 Vector2 Window::windowToClientSize() {
     return mWindowToClientSize;
 }
@@ -156,24 +131,10 @@ Vector2 Window::getWindowCorrect() {
 
 void Window::saveAndLoad(rapidjson::Value& inObj, rapidjson::Document::AllocatorType& alloc, FileMode mode) {
     JsonHelper::getSet(mTitle, "title", inObj, alloc, mode);
-    JsonHelper::getSet(mWidth, "windowWidth", inObj, alloc, mode);
-    JsonHelper::getSet(mHeight, "windowHeight", inObj, alloc, mode);
-    JsonHelper::getSet(mReleaseWidth, "releaseWindowWidth", inObj, alloc, mode);
-    JsonHelper::getSet(mReleaseHeight, "releaseWindowHeight", inObj, alloc, mode);
+    JsonHelper::getSet(mGameWidth, "windowWidth", inObj, alloc, mode);
+    JsonHelper::getSet(mGameHeight, "windowHeight", inObj, alloc, mode);
     JsonHelper::getSet(mStandardWidth, "windowStandardWidth", inObj, alloc, mode);
     JsonHelper::getSet(mStandardHeight, "windowStandardHeight", inObj, alloc, mode);
-    JsonHelper::getSet(mDebugWidth, "windowDebugWidth", inObj, alloc, mode);
-    JsonHelper::getSet(mDebugHeight, "windowDebugHeight", inObj, alloc, mode);
-
-    if (mode == FileMode::LOAD) {
-#ifdef _DEBUG
-        mGameWidth = mWidth;
-        mGameHeight = mHeight;
-#else
-        mGameWidth = mReleaseWidth;
-        mGameHeight = mReleaseHeight;
-#endif // _DEBUG
-    }
 }
 
 void Window::updateWindowToClientSize() {
@@ -190,11 +151,6 @@ void Window::updateWindowToClientSize() {
     cw = cRect.right - cRect.left;
     ch = cRect.bottom - cRect.top;
     //ウィンドウとクライアントの比率を計算
-#ifdef _DEBUG
-    mWindowToClientSize.x = static_cast<float>(mDebugWidth) / static_cast<float>(cw);
-    mWindowToClientSize.y = static_cast<float>(mDebugHeight) / static_cast<float>(ch);
-#else
-    mWindowToClientSize.x = static_cast<float>(mReleaseWidth) / static_cast<float>(cw);
-    mWindowToClientSize.y = static_cast<float>(mReleaseHeight) / static_cast<float>(ch);
-#endif // _DEBUG
+    mWindowToClientSize.x = static_cast<float>(mStandardWidth) / static_cast<float>(cw);
+    mWindowToClientSize.y = static_cast<float>(mStandardHeight) / static_cast<float>(ch);
 }

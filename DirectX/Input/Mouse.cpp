@@ -123,15 +123,8 @@ void Mouse::updateMousePosition() {
 }
 
 void Mouse::clampMousePosition() {
-#ifdef _DEBUG
     mCurrentMousePosition.clamp(
         Vector2::zero,
-        Vector2(static_cast<float>(Window::debugWidth()), static_cast<float>(Window::debugHeight()))
+        Vector2(static_cast<float>(Window::standardWidth()), static_cast<float>(Window::standardHeight()))
     );
-#else
-    mCurrentMousePosition.clamp(
-        Vector2::zero,
-        Vector2(static_cast<float>(Window::width()), static_cast<float>(Window::height()))
-    );
-#endif // _DEBUG
 }

@@ -25,8 +25,6 @@ public:
     static Vector2 size();
     static int standardWidth();
     static int standardHeight();
-    static int debugWidth();
-    static int debugHeight();
     static Vector2 windowToClientSize();
     //ゲームウィンドウをフルHDサイズに変える補正値を取得する
     static Vector2 getWindowCorrect();
@@ -46,14 +44,8 @@ private:
     std::string mTitle;
     static inline int mGameWidth = 1080;
     static inline int mGameHeight = 720;
-    static inline int mWidth = 1080;
-    static inline int mHeight = 720;
-    static inline int mReleaseWidth = 1080;
-    static inline int mReleaseHeight = 720;
     static inline int mStandardWidth = 1920;
     static inline int mStandardHeight = 1080;
-    static inline int mDebugWidth = 1920;
-    static inline int mDebugHeight = 1080;
     static inline Vector2 mWindowToClientSize = Vector2::zero;
 };
 

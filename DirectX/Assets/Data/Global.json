@@ -4,12 +4,8 @@
             "title": "ModelViewer",
             "windowWidth": 1280,
             "windowHeight": 720,
-            "releaseWindowWidth": 1920,
-            "releaseWindowHeight": 1080,
             "windowStandardWidth": 1920,
-            "windowStandardHeight": 1080,
-            "windowDebugWidth": 1920,
-            "windowDebugHeight": 1080
+            "windowStandardHeight": 1080
         },
         "FPSCounter": {
             "fps": 60.0
@@ -33,7 +29,9 @@
         "AssetsRenderTextureList": {
             "textureSize": 64,
             "textureDisplayInterval": 32,
-            "texturesFilePath": []
+            "texturesFilePath": [
+                "Assets\\Model\\untitled.fbx"
+            ]
         },
         "AssetsRenderTextureAdder": {
             "renderPosition": [

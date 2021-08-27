@@ -156,7 +156,7 @@ void ModelViewer::drawGUI() const {
     //ウィンドウ位置を固定
     ImGui::SetNextWindowPos(ImVec2(Window::width(), 0.f), ImGuiCond_Always);
     //ウィンドウサイズを固定
-    ImGui::SetNextWindowSize(ImVec2(Window::standardWidth() - Window::width(), Window::debugHeight()), ImGuiCond_Always);
+    ImGui::SetNextWindowSize(ImVec2(Window::standardWidth() - Window::width(), Window::standardHeight()), ImGuiCond_Always);
 
     ImGui::Begin("ModelViewer");
 
