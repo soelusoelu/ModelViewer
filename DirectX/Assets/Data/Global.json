@@ -29,9 +29,7 @@
         "AssetsRenderTextureList": {
             "textureSize": 64,
             "textureDisplayInterval": 32,
-            "texturesFilePath": [
-                "Assets\\Model\\untitled.fbx"
-            ]
+            "texturesFilePath": []
         },
         "AssetsRenderTextureAdder": {
             "renderPosition": [

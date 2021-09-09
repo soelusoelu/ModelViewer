@@ -2,6 +2,7 @@
 #include "../../System/AssetsManager.h"
 #include "../../System/Texture/TextureFromFile.h"
 #include "../../Utility/FileUtil.h"
+#include "../../Utility/StringUtil.h"
 
 FbxMaterialParser::FbxMaterialParser() = default;
 
@@ -144,7 +145,10 @@ void FbxMaterialParser::createTexture(Material& material, const FbxSurfaceMateri
     //ファイルパスを相対パスで取得
     auto filePath = fbxTexture->GetRelativeFileName();
     //ファイルパスからファイル名を取得する
-    const auto& textureName = FileUtil::getFileNameFromDirectry(filePath);
+    auto textureName = FileUtil::getFileNameFromDirectry(filePath);
+
+    //Unicodeからcharへ変換する
+    textureName = StringUtil::utf8ToShitJIS(textureName);
 
     //ファイル名からテクスチャを作成する
     auto& am = AssetsManager::instance();
